@@ -14,6 +14,6 @@ html_doc = urlopen(HTML_ADDRESS, context=ctx).read()
 
 soup = BeautifulSoup(html_doc)
  
-for link in soup.find_all("div", {"class":"cols__wrapper"}):
-    print link.contents[0]
+for link in soup.find_all("span", {"class":"cell valign_middle"}):
+    print link.a['href']
 #print soup
